@@ -5,9 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import org.springframework.hateoas.RepresentationModel;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
-public class Evento {
+public class Evento extends RepresentationModel<Evento>{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
