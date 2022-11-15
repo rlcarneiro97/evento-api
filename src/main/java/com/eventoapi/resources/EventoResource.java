@@ -34,13 +34,10 @@ public class EventoResource {
 
         for(Evento evento : listaEventos){
             long codigo = evento.getCodigo();
-            // evento.add(linkTo(methodOn(EventoResource.class).evento(codigo)));
             evento.add(linkTo(methodOn(EventoResource.class).evento(codigo)).withSelfRel());
             eventos.add(evento);
         }
 
-        // return new ResponseEntity<List<Evento>>(listaEventos, HttpStatus.OK);
-        // return new ResponseEntity<>(eventos, HttpStatus.OK);
         return eventos;
     }
 
